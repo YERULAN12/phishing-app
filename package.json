@@ -1,0 +1,26 @@
+{
+  "name": "phishing-diploma",
+  "version": "1.0.0",
+  "description": "Web-app for phishing email analysis",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "dependencies": {
+    "axios": "^1.9.0",
+    "bcrypt": "^5.1.1",
+    "cookie-parser": "^1.4.7",
+    "dotenv": "^16.5.0",
+    "ejs": "^3.1.10",
+    "express": "^4.21.2",
+    "express-session": "^1.18.1",
+    "mailparser": "^3.7.3",
+    "mongoose": "^8.15.1",
+    "multer": "^1.4.5-lts.1",
+    "pdfkit": "^0.13.0",
+    "tesseract.js": "^4.1.4"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

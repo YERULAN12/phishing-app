@@ -1,0 +1,160 @@
+[
+  {
+    "userId": 1749491208712,
+    "timestamp": "2025-06-09T17:47:04.712Z",
+    "type": "eml",
+    "from": "support@secure-update.com",
+    "subject": "Аккаунтыңызды растаңыз",
+    "urls": [
+      "http://secure-update-alert.com/login"
+    ],
+    "domain": "secure-update.com",
+    "spf": "Иә (бар)",
+    "dkim": "Жоқ",
+    "dmarc": "Жоқ",
+    "vtResults": [
+      {
+        "url": "http://secure-update-alert.com/login",
+        "stats": {
+          "malicious": 0,
+          "suspicious": 0,
+          "undetected": 32,
+          "harmless": 65,
+          "timeout": 0
+        }
+      }
+    ],
+    "riskLevel": "Medium"
+  },
+  {
+    "userId": 1749491208712,
+    "timestamp": "2025-06-09T17:50:21.693Z",
+    "type": "eml",
+    "from": "support@secure-update.com",
+    "subject": "Аккаунтыңызды растаңыз",
+    "urls": [
+      "http://secure-update-alert.com/login"
+    ],
+    "domain": "secure-update.com",
+    "spf": "Иә (бар)",
+    "dkim": "Жоқ",
+    "dmarc": "Жоқ",
+    "vtResults": [
+      {
+        "url": "http://secure-update-alert.com/login",
+        "stats": {
+          "malicious": 0,
+          "suspicious": 0,
+          "undetected": 32,
+          "harmless": 65,
+          "timeout": 0
+        }
+      }
+    ],
+    "riskLevel": "Medium"
+  },
+  {
+    "userId": 1749491208712,
+    "timestamp": "2025-06-09T20:58:32.749Z",
+    "type": "eml",
+    "from": "support@secure-update.com",
+    "subject": "Аккаунтыңызды растаңыз",
+    "urls": [
+      "http://secure-update-alert.com/login"
+    ],
+    "domain": "secure-update.com",
+    "spf": "Иә (бар)",
+    "dkim": "Жоқ",
+    "dmarc": "Жоқ",
+    "vtResults": [
+      {
+        "url": "http://secure-update-alert.com/login",
+        "stats": {
+          "malicious": 0,
+          "suspicious": 0,
+          "undetected": 32,
+          "harmless": 65,
+          "timeout": 0
+        }
+      }
+    ],
+    "riskLevel": "Medium"
+  },
+  {
+    "userId": 1749491208712,
+    "timestamp": "2025-06-09T21:14:45.916Z",
+    "type": "eml",
+    "from": "support@secure-update.com",
+    "subject": "Важное уведомление о безопасности",
+    "urls": [
+      "http://secure-update-alert.com/login"
+    ],
+    "domain": "secure-update.com",
+    "spf": "Иә (бар)",
+    "dkim": "Жоқ",
+    "dmarc": "Жоқ",
+    "vtResults": [
+      {
+        "url": "http://secure-update-alert.com/login",
+        "stats": {
+          "malicious": 0,
+          "suspicious": 0,
+          "undetected": 32,
+          "harmless": 65,
+          "timeout": 0
+        }
+      }
+    ],
+    "riskLevel": "Medium"
+  },
+  {
+    "userId": 1749491208712,
+    "timestamp": "2025-06-09T21:31:03.164Z",
+    "type": "eml",
+    "from": "",
+    "subject": "",
+    "urls": [
+      "http://va.truepic.com/ejbca/publicweb/status/ocsp0\u001d\u0006\u0003U\u001d%\u0004\u00160\u0014\u0006\b+\u0006\u0001\u0005\u0005\u0007\u0003\u0004\u0006\b+\u0006\u0001\u0005\u0005\u0007\u0003$0\u001d\u0006\u0003U\u001d\u000e\u0004\u0016\u0004\u0014�^\u0013.,\u001b5�mbEM3C\u0005b��*0\u000e\u0006\u0003U\u001d\u000f\u0001\u0001�\u0004\u0004\u0003\u0002\u0007�0"
+    ],
+    "domain": "",
+    "spf": "Қате",
+    "dkim": "Қате",
+    "dmarc": "Қате",
+    "vtResults": [
+      {
+        "url": "http://va.truepic.com/ejbca/publicweb/status/ocsp0\u001d\u0006\u0003U\u001d%\u0004\u00160\u0014\u0006\b+\u0006\u0001\u0005\u0005\u0007\u0003\u0004\u0006\b+\u0006\u0001\u0005\u0005\u0007\u0003$0\u001d\u0006\u0003U\u001d\u000e\u0004\u0016\u0004\u0014�^\u0013.,\u001b5�mbEM3C\u0005b��*0\u000e\u0006\u0003U\u001d\u000f\u0001\u0001�\u0004\u0004\u0003\u0002\u0007�0",
+        "stats": {
+          "error": "Request failed with status code 404"
+        }
+      }
+    ],
+    "riskLevel": "Safe"
+  },
+  {
+    "userId": 1749491208712,
+    "timestamp": "2025-06-09T21:44:51.120Z",
+    "type": "eml",
+    "from": "support@secure-update.com",
+    "subject": "Аккаунтыңызды растаңыз",
+    "urls": [
+      "http://secure-update-alert.com/login"
+    ],
+    "domain": "secure-update.com",
+    "spf": "Иә (бар)",
+    "dkim": "Жоқ",
+    "dmarc": "Жоқ",
+    "vtResults": [
+      {
+        "url": "http://secure-update-alert.com/login",
+        "stats": {
+          "malicious": 0,
+          "suspicious": 0,
+          "undetected": 32,
+          "harmless": 65,
+          "timeout": 0
+        }
+      }
+    ],
+    "riskLevel": "Medium"
+  }
+]

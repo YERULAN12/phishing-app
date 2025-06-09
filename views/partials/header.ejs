@@ -1,0 +1,28 @@
+<header class="d-flex justify-content-between align-items-center px-4 py-3 border-bottom bg-white shadow-sm">
+  <h5 class="mb-0 text-primary">Фишингке қарсы тексеру</h5>
+
+  <nav class="d-flex gap-3">
+    <% if (user) { %>
+      <a href="/analyze?lang=<%= lang %>" class="btn btn-outline-primary btn-sm">
+        <%= lang === 'kk' ? 'Жаңа анализ' : 'Новый анализ' %>
+      </a>
+      <a href="/dashboard?lang=<%= lang %>" class="btn btn-outline-secondary btn-sm">
+        <%= lang === 'kk' ? 'Кабинет' : 'Кабинет' %>
+      </a>
+      <a href="/logout" class="btn btn-danger btn-sm">
+        <%= lang === 'kk' ? 'Шығу' : 'Выход' %>
+      </a>
+    <% } else { %>
+      <% if (path === "/register") { %>
+        <a href="/login?lang=<%= lang %>" class="btn btn-outline-primary btn-sm">
+          <%= lang === 'kk' ? 'Кіру' : 'Вход' %>
+        </a>
+      <% } else if (path === "/login") { %>
+        <a href="/register?lang=<%= lang %>" class="btn btn-outline-secondary btn-sm">
+          <%= lang === 'kk' ? 'Тіркелу' : 'Регистрация' %>
+        </a>
+      <% } %>
+    <% } %>
+  </nav>
+</header>
+

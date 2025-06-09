@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="<%= lang %>">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Фишингке қарсы тексеру</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body class="bg-light">
+
+<div class="d-flex">
+
+  <!-- Sidebar (шаблон ішіне қосылған) -->
+  <%- include('partials/sidebar') %>
+
+  <!-- Контент -->
+  <main class="p-5 w-100">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+      <h3 class="mb-0"><%= lang === 'kk' ? 'Фишингке қарсы тексеру' : 'Проверка на фишинг' %></h3>
+      <div class="d-flex gap-2">
+        <button data-lang="kk" class="btn btn-outline-secondary btn-sm<%= lang==='kk'?' active':'' %>">🇰🇿 Қазақша</button>
+        <button data-lang="ru" class="btn btn-outline-secondary btn-sm<%= lang==='ru'?' active':'' %>">🇷🇺 Русский</button>
+        <button id="theme-toggle" class="btn btn-outline-dark btn-sm">🌗</button>
+      </div>
+    </div>
+
+    <!-- Form -->
+    <form action="/analyze" method="POST" enctype="multipart/form-data" class="d-flex align-items-center gap-3 bg-white shadow-sm rounded p-4 mb-4">
+      <div class="input-group">
+        <label class="input-group-text bg-primary text-white"><i class="bi bi-upload"></i></label>
+        <input type="file" name="file" class="form-control" required>
+      </div>
+      <button type="submit" class="btn btn-primary px-4">
+        <%= lang === 'kk' ? 'Тексеру' : 'Тестировать' %>
+      </button>
+    </form>
+
+    <% if (result) { %>
+      <!-- Risk -->
+      <div class="alert 
+        <%= result.riskLevel==='High'?'alert-danger':
+             result.riskLevel==='Medium'?'alert-warning':'alert-success' %>">
+        <strong>
+          <%= lang === 'kk'
+            ? `Қауіп деңгейі: ${result.riskLevel==='High'?'Жоғары':result.riskLevel==='Medium'?'Орташа':'Төмен'}`
+            : `Уровень риска: ${result.riskLevel}` %>
+        </strong>
+      </div>
+
+      <!-- Email -->
+      <div class="card p-4 mb-4 shadow-sm">
+        <h5 class="mb-3">📧 Email</h5>
+        <dl class="row">
+          <dt class="col-sm-3"><%= lang==='kk' ? 'Кімнен' : 'От кого' %>:</dt>
+          <dd class="col-sm-9"><%= result.from %></dd>
+
+          <dt class="col-sm-3"><%= lang==='kk' ? 'Тақырып' : 'Тема' %>:</dt>
+          <dd class="col-sm-9"><%= result.subject %></dd>
+
+          <dt class="col-sm-3"><%= lang==='kk' ? 'Сілтемелер' : 'Ссылки' %>:</dt>
+          <dd class="col-sm-9">
+            <ul class="mb-0">
+              <% result.urls.forEach(u => { %>
+                <li><a href="<%= u %>" target="_blank"><%= u %></a></li>
+              <% }) %>
+            </ul>
+          </dd>
+        </dl>
+      </div>
+
+      <!-- Domain -->
+      <div class="card p-4 mb-4 shadow-sm">
+        <h5 class="mb-3">🌐 Domain & DNS</h5>
+        <dl class="row">
+          <dt class="col-sm-3">Домен:</dt>
+          <dd class="col-sm-9"><%= result.domain %></dd>
+
+          <dt class="col-sm-3">SPF:</dt>
+          <dd class="col-sm-9"><%= result.spf %></dd>
+
+          <dt class="col-sm-3">DKIM:</dt>
+          <dd class="col-sm-9"><%= result.dkim %></dd>
+
+          <dt class="col-sm-3">DMARC:</dt>
+          <dd class="col-sm-9"><%= result.dmarc %></dd>
+        </dl>
+      </div>
+
+      <!-- VirusTotal -->
+      <div class="card p-4 mb-4 shadow-sm">
+        <h5 class="mb-3">🛡 VirusTotal</h5>
+        <% result.vtResults.forEach(vt => { %>
+          <p><a href="<%= vt.url %>" target="_blank"><%= vt.url %></a></p>
+          <ul>
+            <li>malicious: <%= vt.stats.malicious %></li>
+            <li>suspicious: <%= vt.stats.suspicious %></li>
+            <li>undetected: <%= vt.stats.undetected %></li>
+            <li>harmless: <%= vt.stats.harmless %></li>
+            <li>timeout: <%= vt.stats.timeout %></li>
+          </ul>
+          <hr>
+        <% }) %>
+      </div>
+
+      <!-- Download PDF -->
+      <a href="/download?<%= 
+        'from='+encodeURIComponent(result.from)+
+        '&subject='+encodeURIComponent(result.subject)+
+        '&domain='+encodeURIComponent(result.domain)+
+        '&spf='+encodeURIComponent(result.spf)+
+        '&dkim='+encodeURIComponent(result.dkim)+
+        '&dmarc='+encodeURIComponent(result.dmarc)+
+        '&risk='+encodeURIComponent(result.riskLevel)+
+        '&urls='+encodeURIComponent(result.urls.join(',')) 
+      %>" class="btn btn-outline-primary">
+        📄 <%= lang==='kk'? 'PDF жүктеу':'Скачать PDF' %>
+      </a>
+    <% } %>
+  </main>
+</div>
+
+<script src="/js/app.js"></script>
+</body>
+</html>
+

@@ -6,6 +6,9 @@
   "scripts": {
     "start": "node app.js"
   },
+  "engines": {
+    "node": "18.x"
+  },
   "dependencies": {
     "axios": "^1.9.0",
     "bcrypt": "^5.1.1",
@@ -21,6 +24,6 @@
     "tesseract.js": "^4.1.4"
   },
   "keywords": [],
-  "author": "",
+  "author": "Yerulan",
   "license": "ISC"
 }
